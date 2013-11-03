@@ -1,0 +1,11 @@
+<i class="icon-fixed-width icon-[[ { pending: 'ellipsis-horizontal', good: 'ok', bad: 'remove', ok: 'meh'}[data.coverageStatus] || 'ellipsis-horizontal' ]]"></i>
+<strong>Blanket.js Coverage</strong>
+[[ data.coverageStatus || 'pending' ]]
+[[ data.percent | percentage ]]
+([[ data.covered ]] / [[ data.sloc ]] lines)
+[[ data.files.length ]] file[[ data.files.length > 1 ? 's' : '']]
+<button class="btn btn-small btn-primary" ng-click="showing=true">Details</button>
+<div class="more-info" ng-show="showing">
+  <iframe html-src="data.html"></iframe>
+  <div class="closer" ng-click="showing=false">&times;</div>
+</div>

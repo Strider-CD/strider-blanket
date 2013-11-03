@@ -21,5 +21,26 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Strider-CD/strider-blanket/issues"
+  },
+  "dependencies": {
+    "mocha": "~1.14.0",
+    "jade": "~0.35.0"
+  },
+  "strider": {
+    "id": "blanket",
+    "type": "job",
+    "title": "Blanket",
+    "webapp": "webapp.js",
+    "worker": "worker.js",
+    "icon": "icon.png",
+    "config": true,
+    "build-status": {
+      "style": "config/build.less",
+      "template": "config/build.html",
+      "attrs": {
+        "ng-show": "data.enabled",
+        "class": "[[ data.coverageStatus ]]"
+      }
+    }
   }
 }

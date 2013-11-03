@@ -1,0 +1,43 @@
+@import "strider-colors";
+
+.status-blanket {
+  background-color: @strider-bg-running;
+
+  &.high {
+    background-color: @strider-bg-passed;
+  }
+
+  &.medium {
+    background-color: orange;
+  }
+
+  &.terrible,
+  &.low {
+    background-color: @strider-bg-failed;
+  }
+
+  .more-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+
+    iframe {
+      border: none;
+      height: 100%;
+      width: 100%;
+    }
+    .closer {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+      cursor: pointer;
+    }
+      
+  }
+}

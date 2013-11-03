@@ -1,0 +1,6 @@
+
+<select ng-change="save()" ng-model="config.test">
+  <option value="mocha -r blanket -R json-cov">mocha -r blanket -R json-cov</option>
+  <option value="make blanket-json">make test</option>
+</select>
+<input ng-model="config.test"> Or specify your own here. <button class="btn btn-primary" ng-click="save()">Save</button>
