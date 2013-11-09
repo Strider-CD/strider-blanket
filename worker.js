@@ -23,9 +23,9 @@ module.exports = {
     config = config || {}
     var ret = {
       prepare: function (context, done) {
-        var needit = fs.existsSync(path.join(context.dataDir, 'node_modules/blanket'))
+        var haveit = fs.existsSync(path.join(context.dataDir, 'node_modules/blanket'))
         context.data({enabled: true})
-        if (!needit) return done()
+        if (haveit) return done()
         context.cmd('npm install blanket', done)
       },
       test: function (context, done) {
