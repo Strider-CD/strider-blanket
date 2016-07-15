@@ -2,7 +2,7 @@
 test: lint
 	@mocha -R spec
 
-tolint := *.js *.json config
+tolint := *.js config
 
 lint:
 	@eslint $(tolint)
