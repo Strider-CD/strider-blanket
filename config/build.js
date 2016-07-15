@@ -1,4 +1,3 @@
-
 app.directive('htmlSrc', function () {
   return {
     restrict: 'A',

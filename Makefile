@@ -5,6 +5,6 @@ test: lint
 tolint := *.js *.json config
 
 lint:
-	@jshint --verbose $(tolint)
+	@eslint --verbose $(tolint)
 
 .PHONY: test lint watch build less

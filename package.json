@@ -42,5 +42,8 @@
         "class": "[[ data.coverageStatus ]]"
       }
     }
+  },
+  "devDependencies": {
+    "eslint": "2.13.1"
   }
 }
