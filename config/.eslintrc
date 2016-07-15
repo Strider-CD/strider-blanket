@@ -8,6 +8,9 @@
     "commonjs": true,
     "es6": true
   },
+  "globals": {
+    "app": true
+  },
   "extends": "eslint:recommended",
   "rules": {
     "indent": [2, 2],
