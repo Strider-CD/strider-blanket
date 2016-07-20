@@ -4,7 +4,8 @@
   "description": "Blanket.js for your project",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "lint": "eslint *.js config",
+    "test": "npm run lint && mocha -R spec"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
     "blanket",
     "blanket.js"
   ],
+  "engines": {
+    "node": ">=4.2"
+  },
   "author": "Jared Forsyth",
   "license": "MIT",
   "bugs": {
@@ -24,7 +28,7 @@
   },
   "dependencies": {
     "mocha": "~1.14.0",
-    "jade": "~0.35.0"
+    "pug": "^2.0.0-beta4"
   },
   "strider": {
     "id": "blanket",
@@ -44,6 +48,6 @@
     }
   },
   "devDependencies": {
-    "eslint": "2.13.1"
+    "eslint": "^3.1.1"
   }
 }

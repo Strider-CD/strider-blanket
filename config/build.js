@@ -3,8 +3,8 @@ app.directive('htmlSrc', function () {
     restrict: 'A',
     link: function (scope, element, attrs) {
       scope.$watch(attrs.htmlSrc, function (value) {
-        attrs.$set('src', 'data:text/html,' + value)
-      })
+        attrs.$set('src', 'data:text/html,' + value);
+      });
     }
   };
 });

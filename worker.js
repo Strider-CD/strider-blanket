@@ -1,10 +1,10 @@
-var path = require('path')
-  , fs = require('fs')
-  , jade = require('jade')
+var fs = require('fs');
+var path = require('path');
+var pug = require('pug');
 
-  , fpath = path.join(__dirname, 'node_modules/mocha/lib/reporters/templates/coverage.jade')
-  , template = fs.readFileSync(fpath, 'utf8')
-  , htmlCov = jade.compile(template, {filename: fpath});
+var fpath = path.join(__dirname, 'node_modules/mocha/lib/reporters/templates/coverage.jade');
+var template = fs.readFileSync(fpath, 'utf8');
+var htmlCov = pug.compile(template, {filename: fpath});
 
 function coverageClass(n) {
   if (n >= 75) return 'high';
@@ -25,7 +25,7 @@ module.exports = {
         var haveit = fs.existsSync(path.join(context.dataDir, 'node_modules/blanket'));
         context.data({enabled: true});
         if (haveit) return done();
-        context.cmd('npm install blanket', done)
+        context.cmd('npm install blanket', done);
       },
       test: function (context, done) {
         context.comment('Generating coverage report');
@@ -36,9 +36,9 @@ module.exports = {
           if (err) return done(err);
           var report;
           try {
-            report = JSON.parse(stdout)
+            report = JSON.parse(stdout);
           } catch (e) {
-            return done(new Error('coverage report not json'))
+            return done(new Error('coverage report not json'));
           }
           var goodness = report.coverage > 80 ? 'good' : (report.coverage > 50 ? 'ok' : 'bad');
           report.files.map(function (file) {
@@ -60,14 +60,15 @@ module.exports = {
                 covered: file.hits,
                 sloc: file.sloc,
                 path: file.filename
-              }
+              };
             })
           }, 'replace', null);
-          done()
-        })
+
+          done();
+        });
       }
     };
-    cb(null, ret)
+    cb(null, ret);
   }
 };
 
